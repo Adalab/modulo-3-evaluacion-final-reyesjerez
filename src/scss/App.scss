@@ -1,1 +1,54 @@
-@import 'core/reset';
+@import "core/reset";
+@import "core/variables";
+
+
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  &__img {
+    width: 40%;
+    margin-bottom: 20px;
+
+  }
+  &__title {
+    font-family: $font-title;  
+    font-size: 36px;
+    font-weight:300;
+    width: 70%;
+    text-align: center;
+    line-height: 1.3;
+
+  }
+  
+}
+
+.form{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding-bottom: 30px;
+    &__fieldset{
+        border: none;
+        display: flex;
+        gap: 10px;
+    }
+}
+
+.character {
+    &__list{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 0px 30px;
+        gap: 30px;
+    }
+    &__item{
+        list-style: none;
+        text-align: center;
+        &__img{
+            width: 100%;
+        }
+    }
+}
