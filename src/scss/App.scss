@@ -30,6 +30,7 @@
     gap: 30px;
     justify-content: center;
     padding-bottom: 30px;
+    font-family: $font-main;
     &__fieldset{
         border: none;
         display: flex;
@@ -41,7 +42,7 @@
     &__list{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        padding: 0px 30px;
+        padding: 0px 120px;
         gap: 30px;
     }
     &__item{
