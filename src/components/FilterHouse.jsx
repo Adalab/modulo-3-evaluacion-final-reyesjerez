@@ -1,11 +1,19 @@
-function FilterHouse() {
+function FilterHouse({ changeFilterHouse, filterHouse }) {
+  const handleInput = (event) => {
+    changeFilterHouse(event.currentTarget.value);
+  };
+
   return (
     <fieldset className="form__fieldset">
       <label className="form__label" htmlFor="house">
-        {" "}
-        Elija su casa fav:
+        Elija su casa favorita:
       </label>
-      <select name="house" id="houe">
+      <select
+        name="house"
+        id="house"
+        onChange={handleInput}
+        value={filterHouse}
+      >
         <option value="gryffindor">Gryffindor</option>
         <option value="hufflepuff">Hufflepuff</option>
         <option value="ravenclaw">Ravenclaw</option>

@@ -1,7 +1,12 @@
 import FilterName from "./FilterName";
 import FilterHouse from "./FilterHouse";
 
-function Filters({ changeFilterName, filterName }) {
+function Filters({
+  changeFilterName,
+  filterName,
+  changeFilterHouse,
+  filterHouse,
+}) {
   const handleSubmit = (event) => {
     event.preventDefault;
   };
@@ -11,7 +16,10 @@ function Filters({ changeFilterName, filterName }) {
         changeFilterName={changeFilterName}
         filterName={filterName}
       ></FilterName>
-      <FilterHouse></FilterHouse>
+      <FilterHouse
+        changeFilterHouse={changeFilterHouse}
+        filterHouse={filterHouse}
+      ></FilterHouse>
     </form>
   );
 }

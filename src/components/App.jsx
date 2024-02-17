@@ -18,15 +18,19 @@ function App() {
 
   const [filterName, setFilterName] = useState("");
 
+  const [filterHouse, setFilterHouse] = useState(get("house") || "gryffindor");
+
   useEffect(() => {
     if (!includes("characters"))
       fetchCharacters().then((data) => {
         setCharactersData(data);
         set("characters", data);
+        set("house", filterHouse);
       });
     else {
+      set("house", filterHouse);
     }
-  }, []);
+  }, [filterHouse]);
 
   const findCharacter = (id) => {
     return charactersData.find((character) => character.id === id);
@@ -36,11 +40,17 @@ function App() {
     setFilterName(name);
   };
 
+  const changeFilterHouse = (house) => {
+    setFilterHouse(house);
+  };
+
   const filteredByName = charactersData.filter((character) =>
     character.name.toLowerCase().includes(filterName.toLowerCase())
   );
 
-  console.log(filteredByName);
+  const filteredByHouseAndName = filteredByName.filter((character) =>
+    character.house.toLowerCase().includes(filterHouse.toLowerCase())
+  );
 
   return (
     <div>
@@ -54,9 +64,11 @@ function App() {
                 <Filters
                   changeFilterName={changeFilterName}
                   filterName={filterName}
+                  changeFilterHouse={changeFilterHouse}
+                  filterHouse={filterHouse}
                 />
                 <CharactersList
-                  charactersData={filteredByName}
+                  charactersData={filteredByHouseAndName}
                   filterName={filterName}
                 ></CharactersList>
               </>
