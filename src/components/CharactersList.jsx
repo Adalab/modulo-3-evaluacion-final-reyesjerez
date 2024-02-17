@@ -9,6 +9,7 @@ function charactersList({ charactersData }) {
           image={character.image}
           house={character.house}
           species={character.species}
+          id={character.id}
         ></CharacterCard>
       </li>
     );

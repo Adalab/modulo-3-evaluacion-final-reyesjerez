@@ -44,12 +44,40 @@
         grid-template-columns: 1fr 1fr 1fr;
         padding: 0px 120px;
         gap: 30px;
+        text-decoration: none;
+
     }
     &__item{
         list-style: none;
+        text-decoration: none;
+        color: black;
         text-align: center;
         &__img{
             width: 100%;
         }
+        &__name {
+          text-decoration: none;
+          color: black;
+          font-family: $font-title;
+        font-weight: 500;
+        font-size: 24px;
+        }
+        &__text {
+          text-decoration: none;
+          color: black;
+          font-family: $font-main;
+          font-size: 12px;
+        }
     }
+}
+
+
+.footer {
+  position: sticky;
+  bottom: 0px;
+  background-color: white;
+  font-size: 12px;
+  font-family: $font-title;
+  text-align: center;
+  padding: 10px;
 }
