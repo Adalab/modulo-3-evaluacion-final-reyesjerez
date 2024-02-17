@@ -2,6 +2,10 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import imageGryffindor from "../images/houses/gryffindor.gif";
+import ravenclaw from "../images/houses/ravenclaw.gif";
+import gryffindor from "../images/houses/gryffindor.gif";
+import slytherin from "../images/houses/slytherin.gif";
+import hufflepuff from "../images/houses/hufflepuff.gif";
 
 function CharacterDetail({ findCharacter }) {
   const params = useParams();
@@ -17,7 +21,15 @@ function CharacterDetail({ findCharacter }) {
         <section>
           <img
             className="detail__img"
-            src={character.image || imageGryffindor}
+            src={
+              character.house === "Gryffindor"
+                ? character.image || gryffindor
+                : character.house === "Slytherin"
+                ? character.image || slytherin
+                : character.house === "Hufflepuff"
+                ? character.image || hufflepuff
+                : character.image || ravenclaw
+            }
             alt="Foto de "
           />
         </section>
@@ -39,7 +51,10 @@ function CharacterDetail({ findCharacter }) {
             <span className="detail__text">{character.dateOfBirth}</span>
           </h5>
           <h5 className="detail__title">
-            Vivo: <span className="detail__text">{character.alive}</span>
+            Vivo:{" "}
+            <span className="detail__text">
+              {character.alive ? "Si" : "No"}
+            </span>
           </h5>
           <h5 className="detail__title">
             Especie: <span className="detail__text">{character.species}</span>
@@ -49,7 +64,10 @@ function CharacterDetail({ findCharacter }) {
           </h5>
           <h5 className="detail__title">
             Categoría de mago:{" "}
-            <span className="detail__text">True {character.wizard}</span>
+            <span className="detail__text">
+              {" "}
+              {character.wizard ? "Si" : "No"}
+            </span>
           </h5>
           <Link className="button" to="/">
             Volver
