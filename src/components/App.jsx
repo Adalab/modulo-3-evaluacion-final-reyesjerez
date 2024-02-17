@@ -16,6 +16,8 @@ import CharacterDetail from "./CharacterDetail";
 function App() {
   const [charactersData, setCharactersData] = useState(get("characters", []));
 
+  const [filterName, setFilterName] = useState("");
+
   useEffect(() => {
     if (!includes("characters"))
       fetchCharacters().then((data) => {
@@ -30,6 +32,14 @@ function App() {
     return charactersData.find((character) => character.id === id);
   };
 
+  const changeFilterName = (name) => {
+    setFilterName(name);
+  };
+
+  const filteredByName = charactersData.filter((character) =>
+    character.name.toLowerCase().includes(filterName.toLowerCase())
+  );
+
   return (
     <div>
       <Header></Header>
@@ -38,8 +48,15 @@ function App() {
           <Route
             path="/"
             element={
-              // <Filters/>
-              <CharactersList charactersData={charactersData}></CharactersList>
+              <>
+                <Filters
+                  changeFilterName={changeFilterName}
+                  filterName={filterName}
+                />
+                <CharactersList
+                  charactersData={filteredByName}
+                ></CharactersList>
+              </>
             }
           />
           <Route

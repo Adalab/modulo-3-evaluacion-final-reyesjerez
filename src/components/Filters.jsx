@@ -1,10 +1,13 @@
 import FilterName from "./FilterName";
 import FilterHouse from "./FilterHouse";
 
-function Filters() {
+function Filters({ changeFilterName, filterName }) {
   return (
     <form className="form">
-      <FilterName></FilterName>
+      <FilterName
+        changeFilterName={changeFilterName}
+        filterName={filterName}
+      ></FilterName>
       <FilterHouse></FilterHouse>
     </form>
   );
