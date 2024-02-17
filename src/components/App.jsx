@@ -40,6 +40,8 @@ function App() {
     character.name.toLowerCase().includes(filterName.toLowerCase())
   );
 
+  console.log(filteredByName);
+
   return (
     <div>
       <Header></Header>
@@ -55,6 +57,7 @@ function App() {
                 />
                 <CharactersList
                   charactersData={filteredByName}
+                  filterName={filterName}
                 ></CharactersList>
               </>
             }

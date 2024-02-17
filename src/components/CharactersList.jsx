@@ -1,6 +1,6 @@
 import CharacterCard from "./CharacterCard";
 
-function charactersList({ charactersData }) {
+function charactersList({ charactersData, filterName }) {
   const charactersHtml = charactersData.map((character) => {
     return (
       <li className="character__item" key={character.id}>
@@ -14,7 +14,16 @@ function charactersList({ charactersData }) {
       </li>
     );
   });
-  return <ul className="character__list">{charactersHtml}</ul>;
+
+  if (charactersData.length === 0) {
+    return (
+      <p className="result">
+        No hemos encontrado ningún personaje que coincida con: {filterName}.
+      </p>
+    );
+  } else {
+    return <ul className="character__list">{charactersHtml}</ul>;
+  }
 }
 
 export default charactersList;

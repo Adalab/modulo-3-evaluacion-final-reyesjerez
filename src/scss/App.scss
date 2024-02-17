@@ -71,6 +71,12 @@
     }
 }
 
+.result {
+  font-size: 14px;
+  font-family: $font-main;
+  text-align: center;
+}
+
 .detail {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -112,11 +118,12 @@ padding-bottom: 30px;
 
 
 .footer {
-  position: sticky;
+  position: fixed;
   bottom: 0px;
   background-color: white;
   font-size: 12px;
   font-family: $font-title;
   text-align: center;
   padding: 10px;
+width: 100%;  
 }
