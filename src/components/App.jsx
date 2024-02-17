@@ -1,18 +1,26 @@
+import { useState, useEffect } from "react";
+
 import "../scss/App.scss";
 
 import Header from "./Header";
 import Filters from "./Filters";
 import CharactersList from "./CharactersList";
 
-import characters from "../data/data.json";
+import { fetchCharacters } from "../services/fetch";
 
 function App() {
+  const [charactersData, setCharactersData] = useState([]);
+
+  useEffect(() => {
+    fetchCharacters().then((data) => setCharactersData(data));
+  }, []);
+
   return (
     <div>
       <Header></Header>
       <main>
         <Filters></Filters>
-        <CharactersList characters={characters}></CharactersList>
+        <CharactersList charactersData={charactersData}></CharactersList>
       </main>
     </div>
   );
