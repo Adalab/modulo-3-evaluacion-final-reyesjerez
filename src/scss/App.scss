@@ -129,6 +129,17 @@ padding-bottom: 30px;
   text-decoration: none;
   position: relative;
   top: 30px;
+  &__notfound {
+    font-family: $font-main;
+    border: solid black;
+    padding: 5px;
+    margin: 10px;
+    color: white;
+    background-color: black;
+    text-decoration: none;
+    position: absolute;
+    left: 46% 
+  }
 }
 
 

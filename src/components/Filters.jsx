@@ -1,6 +1,5 @@
 import FilterName from "./FilterName";
 import FilterHouse from "./FilterHouse";
-import FilterAbc from "./FilterAbc";
 import FilterGender from "./FilterGender";
 
 function Filters({
@@ -28,10 +27,6 @@ function Filters({
           changeFilterHouse={changeFilterHouse}
           filterHouse={filterHouse}
         ></FilterHouse>
-        <FilterAbc
-          changeFilterAbc={changeFilterAbc}
-          filterAbc={filterAbc}
-        ></FilterAbc>
         <FilterGender
           changeFilterGender={changeFilterGender}
           filterGender={filterGender}
