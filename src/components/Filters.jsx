@@ -9,16 +9,18 @@ function Filters({
   filterHouse,
   changeFilterGender,
   filterGender,
-  changeFilterAbc,
-  filterAbc,
+  resetFilters,
 }) {
   const handleSubmit = (event) => {
     event.preventDefault;
   };
+  const handleInput = (event) => {
+    resetFilters();
+  };
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
-      <div>
+    <form onSubmit={handleSubmit}>
+      <div className="form">
         <FilterName
           changeFilterName={changeFilterName}
           filterName={filterName}
@@ -31,6 +33,9 @@ function Filters({
           changeFilterGender={changeFilterGender}
           filterGender={filterGender}
         ></FilterGender>
+        <button className="button__reset" onClick={handleInput}>
+          Borrar filtros
+        </button>
       </div>
     </form>
   );

@@ -53,13 +53,14 @@ function App() {
     }
   };
   const changeFilterGender = (gender) => {
-    if (gender === "all") {
-      setFilterGender("");
-    } else {
-      setFilterGender(gender);
-    }
+    gender === "all" ? setFilterGender("") : setFilterGender(gender);
   };
 
+  const resetFilters = () => {
+    setFilterGender("");
+    setFilterHouse("gryffindor");
+    setFilterName("");
+  };
   const filteredByName = charactersData.filter((character) =>
     character.name.toLowerCase().includes(filterName.toLowerCase())
   );
@@ -71,6 +72,7 @@ function App() {
   const filteredByGender = filteredByHouseAndName.filter((character) =>
     character.gender.includes(filterGender)
   );
+  console.log(filteredByGender);
 
   return (
     <div>
@@ -88,6 +90,7 @@ function App() {
                   filterHouse={filterHouse}
                   changeFilterGender={changeFilterGender}
                   filterGender={filterGender}
+                  resetFilters={resetFilters}
                 />
                 <CharactersList
                   charactersData={filteredByGender}

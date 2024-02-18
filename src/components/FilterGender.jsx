@@ -13,7 +13,7 @@ function FilterGender({ changeFilterGender, filterGender }) {
       </label>
       <input
         name="gender"
-        id="genderA"
+        id="all"
         type="radio"
         onChange={handleInput}
         value="all"
@@ -24,7 +24,7 @@ function FilterGender({ changeFilterGender, filterGender }) {
       </label>
       <input
         name="gender"
-        id="genderM"
+        id="male"
         type="radio"
         onChange={handleInput}
         value="male"
@@ -35,7 +35,7 @@ function FilterGender({ changeFilterGender, filterGender }) {
       </label>
       <input
         name="gender"
-        id="genderF"
+        id="female"
         type="radio"
         onChange={handleInput}
         value="female"
