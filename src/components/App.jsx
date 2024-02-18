@@ -21,17 +21,21 @@ function App() {
 
   const [filterHouse, setFilterHouse] = useState(get("house") || "gryffindor");
 
+  const [filterGender, setFilterGender] = useState(get("gender", ""));
+
   useEffect(() => {
     if (!includes("characters"))
       fetchCharacters().then((data) => {
         setCharactersData(data);
         set("characters", data);
         set("house", filterHouse);
+        set("gender", filterGender);
       });
     else {
       set("house", filterHouse);
+      set("gender", filterGender);
     }
-  }, [filterHouse]);
+  }, [filterHouse, filterGender]);
 
   const findCharacter = (id) => {
     return charactersData.find((character) => character.id === id);
@@ -48,6 +52,13 @@ function App() {
       setFilterHouse(house);
     }
   };
+  const changeFilterGender = (gender) => {
+    if (gender === "all") {
+      setFilterGender("");
+    } else {
+      setFilterGender(gender);
+    }
+  };
 
   const filteredByName = charactersData.filter((character) =>
     character.name.toLowerCase().includes(filterName.toLowerCase())
@@ -55,6 +66,10 @@ function App() {
 
   const filteredByHouseAndName = filteredByName.filter((character) =>
     character.house.toLowerCase().includes(filterHouse.toLowerCase())
+  );
+
+  const filteredByGender = filteredByHouseAndName.filter((character) =>
+    character.gender.includes(filterGender)
   );
 
   return (
@@ -71,9 +86,11 @@ function App() {
                   filterName={filterName}
                   changeFilterHouse={changeFilterHouse}
                   filterHouse={filterHouse}
+                  changeFilterGender={changeFilterGender}
+                  filterGender={filterGender}
                 />
                 <CharactersList
-                  charactersData={filteredByHouseAndName}
+                  charactersData={filteredByGender}
                   filterName={filterName}
                 ></CharactersList>
               </>
