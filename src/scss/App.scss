@@ -7,7 +7,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 30px;
+
+  &__link{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
   &__img {
     width: 40%;
     margin-bottom: 20px;
@@ -83,6 +90,14 @@
   gap: 30px;
   padding: 0px 120px;
   width: 100%;
+  padding-bottom: 100px;
+  &__house{
+    position: absolute;
+    width: 5%;
+    right: 120px;
+    
+   
+  }
   &__img{
     width: 100%;
   }

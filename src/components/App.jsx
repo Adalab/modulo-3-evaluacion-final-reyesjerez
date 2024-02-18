@@ -41,7 +41,11 @@ function App() {
   };
 
   const changeFilterHouse = (house) => {
-    setFilterHouse(house);
+    if (house === "all") {
+      setFilterHouse("");
+    } else {
+      setFilterHouse(house);
+    }
   };
 
   const filteredByName = charactersData.filter((character) =>
