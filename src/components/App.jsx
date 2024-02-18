@@ -8,6 +8,7 @@ import Header from "./Header";
 import Filters from "./Filters";
 import CharactersList from "./CharactersList";
 import Footer from "./Footer";
+import NotFoundPage from "./NotFoundPage";
 
 import { fetchCharacters } from "../services/fetch";
 import { get, includes, set } from "../services/localStorage";
@@ -82,6 +83,7 @@ function App() {
             path="/character/:id"
             element={<CharacterDetail findCharacter={findCharacter} />}
           />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
       <Footer></Footer>
