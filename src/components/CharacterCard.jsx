@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import ravenclaw from "../images/houses/ravenclaw.gif";
 import gryffindor from "../images/houses/gryffindor.gif";
@@ -27,5 +28,13 @@ function CharacterCard({ name, image, house, species, id }) {
     </Link>
   );
 }
+
+CharacterCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  house: PropTypes.string.isRequired,
+  species: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+};
 
 export default CharacterCard;

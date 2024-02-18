@@ -1,4 +1,5 @@
 import CharacterCard from "./CharacterCard";
+import PropTypes from "prop-types";
 
 function charactersList({ charactersData, filterName }) {
   const charactersHtml = charactersData.map((character) => {
@@ -25,5 +26,10 @@ function charactersList({ charactersData, filterName }) {
     return <ul className="character__list">{charactersHtml}</ul>;
   }
 }
+
+charactersList.propTypes = {
+  charactersData: PropTypes.array.isRequired,
+  filterName: PropTypes.string.isRequired,
+};
 
 export default charactersList;

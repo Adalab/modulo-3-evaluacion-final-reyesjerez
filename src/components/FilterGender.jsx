@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function FilterGender({ changeFilterGender, filterGender }) {
   const handleInput = (event) => {
     changeFilterGender(event.currentTarget.value);
@@ -44,5 +46,10 @@ function FilterGender({ changeFilterGender, filterGender }) {
     </fieldset>
   );
 }
+
+FilterGender.propTypes = {
+  changeFilterGender: PropTypes.func.isRequired,
+  filterGender: PropTypes.string.isRequired,
+};
 
 export default FilterGender;

@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function FilterName({ changeFilterName, filterName }) {
   const handleInput = (event) => {
     changeFilterName(event.currentTarget.value);
@@ -18,5 +20,10 @@ function FilterName({ changeFilterName, filterName }) {
     </fieldset>
   );
 }
+
+FilterName.propTypes = {
+  changeFilterName: PropTypes.func.isRequired,
+  filterName: PropTypes.string.isRequired,
+};
 
 export default FilterName;

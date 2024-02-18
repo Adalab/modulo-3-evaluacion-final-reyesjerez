@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import ravenclaw from "../images/houses/ravenclaw.gif";
 import gryffindor from "../images/houses/gryffindor.gif";
@@ -95,5 +96,9 @@ function CharacterDetail({ findCharacter }) {
     </>
   );
 }
+
+CharacterDetail.propTypes = {
+  findCharacter: PropTypes.func.isRequired,
+};
 
 export default CharacterDetail;

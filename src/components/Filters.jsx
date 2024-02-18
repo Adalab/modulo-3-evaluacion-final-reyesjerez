@@ -2,6 +2,8 @@ import FilterName from "./FilterName";
 import FilterHouse from "./FilterHouse";
 import FilterGender from "./FilterGender";
 
+import PropTypes from "prop-types";
+
 function Filters({
   changeFilterName,
   filterName,
