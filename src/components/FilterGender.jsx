@@ -15,10 +15,10 @@ function FilterGender({ changeFilterGender, filterGender }) {
       </label>
       <input
         name="gender"
-        id="all"
+        id=""
         type="radio"
         onChange={handleInput}
-        value="all"
+        value=""
         checked={filterGender === ""}
       ></input>
       <label className="form__label" htmlFor="abc">

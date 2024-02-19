@@ -72,7 +72,6 @@ function App() {
   const filteredByGender = filteredByHouseAndName.filter((character) =>
     character.gender.includes(filterGender)
   );
-  console.log(filteredByGender);
 
   return (
     <div>
